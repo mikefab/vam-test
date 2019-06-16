@@ -1,0 +1,13 @@
+version: '3'
+services:
+  db:
+    image: mikefab/mongodb
+    # restart: always
+    ports:
+     - "27017:27017"
+
+  app:
+    build: ./app
+    # restart: always
+    depends_on:
+    - db
