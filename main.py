@@ -3,12 +3,14 @@ import os
 from dotenv import load_dotenv
 from models.fetcher import Fetcher
 load_dotenv()
-print("HI")
+
 # Assign Ona account ID to variable
 dataID = os.environ.get("DATA_ID")
-
+print('Begin')
 # Initialize Fetcher class
 fetcher = Fetcher(dataID)
+# Fetch data
+docsSaved = fetcher.fetchData()
 print('DONE')
-# # Fetch data
-# fetcher.fetchData()
+# Fetch data
+fetcher.fetchData()
